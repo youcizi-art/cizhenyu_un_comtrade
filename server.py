@@ -10,7 +10,7 @@
     通过 header `Ocp-Apim-Subscription-Key`（同时兼容 query `subscription-key`）调用。
     base = https://comtradeapi.un.org/data/v1/get/{typeCode}/{freqCode}/{clCode}
 
-订阅 Key 由词真语 Deploy 注入（无需写死在仓库）：
+订阅 Key 由磁帧鱼 Deploy 注入（无需写死在仓库）：
   - 进程环境 COMTRADE_SUBSCRIPTION_KEY
   - 或 CIZHENYU_AUTH_DIR/comtrade.json 的 subscriptionKey / apiKey
 

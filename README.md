@@ -1,6 +1,6 @@
 # cizhenyu_un_comtrade
 
-UN Comtrade MCP for 词真语 Deploy（零依赖 Python，stdio JSON-RPC）。
+UN Comtrade MCP for 磁帧鱼 Deploy（零依赖 Python，stdio JSON-RPC）。
 
 查询具体商品的进出口**金额**、**数量**、**单价**与**贸易伙伴流向**。
 
