@@ -1,0 +1,55 @@
+{
+  "protocolVersion": 1,
+  "id": "un-comtrade",
+  "name": "UN Comtrade",
+  "category": "analytics",
+  "tier": "optional",
+  "description": "联合国商品贸易：进出口金额、数量、单价与贸易伙伴流向（无注册 preview + 订阅 data 接口）",
+  "source": {
+    "github": "https://github.com/youcizi-art/cizhenyu_un_comtrade",
+    "defaultRef": "master"
+  },
+  "install": {
+    "runtime": "python",
+    "steps": [],
+    "readyCheck": ["server.py"]
+  },
+  "credentials": {
+    "key": "un-comtrade",
+    "fields": [
+      {
+        "type": "label",
+        "name": "intro",
+        "label": "无需注册即可使用「预览接口」。注册并填入订阅 API Key 可解锁完整 data API 与更高限额。"
+      },
+      {
+        "type": "password",
+        "name": "subscriptionKey",
+        "label": "订阅 API Key（可选）",
+        "required": false,
+        "tip": "在 UN Comtrade 注册 → My Comtrade → API Portal → Generate API Key",
+        "link": {
+          "label": "UN Comtrade API Portal",
+          "url": "https://comtradeplus.un.org/MyComtrade/APIPortal"
+        }
+      }
+    ],
+    "sidecar": "comtrade.json"
+  },
+  "env": [
+    { "name": "COMTRADE_SUBSCRIPTION_KEY", "fromCredential": "subscriptionKey" },
+    { "name": "CIZHENYU_AUTH_DIR", "from": "credentialsDir" }
+  ],
+  "mcp": {
+    "transport": "stdio",
+    "command": "python",
+    "args": ["server.py"],
+    "cwd": "."
+  },
+  "guides": { "setup": "guides/setup.md" },
+  "health": {
+    "requireCredentials": false,
+    "requireReadyFiles": ["server.py"]
+  },
+  "actions": []
+}
